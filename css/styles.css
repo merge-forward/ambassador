@@ -370,7 +370,7 @@ a:hover {
   width: 8px;
   height: 8px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--color-red), var(--color-orange));
+  background: linear-gradient(135deg, var(--color-red), var(--color-violet));
   flex-shrink: 0;
   margin-top: 7px;
 }
