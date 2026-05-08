@@ -1,0 +1,481 @@
+/* ============================================
+   MERGE FORWARD — Design System
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap');
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================
+   CSS VARIABLES — edit here to change branding
+   ============================================ */
+
+:root {
+  /* Colors */
+  --color-navy:    #2C2C5E;
+  --color-blue:    #547DEF;
+  --color-violet:  #6050EE;
+  --color-red:     #EF2621;
+  --color-orange:  #F08925;
+  --color-amber:   #F1B72C;
+  --color-white:   #FFFFFF;
+  --color-bg:      #F5F6FA;
+  --color-surface: #FFFFFF;
+  --color-text:    #1A1A2E;
+  --color-muted:   #6B7280;
+  --color-border:  #E2E4EC;
+
+  /* Typography */
+  --font-heading: 'Gilroy', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  48px;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(44, 44, 94, 0.08);
+  --shadow-md: 0 4px 16px rgba(44, 44, 94, 0.12);
+  --shadow-lg: 0 8px 32px rgba(44, 44, 94, 0.16);
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.site-header {
+  background: var(--color-navy);
+  padding: var(--space-md) var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+}
+
+.site-header .logo img {
+  height: 36px;
+  width: auto;
+}
+
+/* ============================================
+   BADGE ISSUED TO BANNER
+   ============================================ */
+
+.issued-banner {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-md) var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.issued-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.issued-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.issued-avatar .avatar-placeholder {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-navy);
+}
+
+.issued-info {
+  flex: 1;
+}
+
+.issued-info .issued-to {
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.issued-info .issued-to strong {
+  font-weight: 600;
+}
+
+.issued-info .issued-date {
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-top: 2px;
+}
+
+.issued-actions {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+
+.main-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* ============================================
+   BADGE VISUAL (left column)
+   ============================================ */
+
+.badge-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* The real badge PNG */
+.badge-img {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(44, 44, 94, 0.22));
+  transition: transform 0.3s ease;
+}
+
+.badge-img:hover {
+  transform: scale(1.03);
+}
+
+/* Share button below badge */
+.btn-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: #0A66C2;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.btn-linkedin:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.btn-linkedin svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   BADGE DETAILS (right column)
+   ============================================ */
+
+.badge-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.badge-main-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--color-navy);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.badge-issuer {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.badge-issuer a {
+  color: var(--color-blue);
+  font-weight: 600;
+}
+
+.badge-description {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-text);
+  line-height: 1.75;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-lg);
+}
+
+.badge-description a {
+  color: var(--color-blue);
+  font-weight: 600;
+}
+
+/* ============================================
+   SECTION BLOCKS (Skills, Earning Criteria)
+   ============================================ */
+
+.badge-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-lg);
+}
+
+.badge-section h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-navy);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+/* Skills tags */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  list-style: none;
+}
+
+.skill-tag {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-navy);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.01em;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.skill-tag:hover {
+  border-color: var(--color-blue);
+  background: #EEF3FE;
+}
+
+/* Earning criteria */
+.criteria-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.criteria-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.criteria-list li::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-red), var(--color-orange));
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-verify {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--color-navy);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-navy);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-verify:hover {
+  background: var(--color-navy);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.site-footer {
+  background: var(--color-navy);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: var(--space-lg) var(--space-xl);
+  font-size: 13px;
+  font-family: var(--font-body);
+  margin-top: var(--space-xl);
+}
+
+.site-footer a {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.badge-visual   { animation: fadeInUp 0.5s ease both; }
+.badge-details  { animation: fadeInUp 0.5s ease 0.1s both; }
+.issued-banner  { animation: fadeInUp 0.4s ease both; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: var(--space-md);
+  }
+
+  .issued-banner {
+    padding: var(--space-md);
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .issued-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-lg);
+  }
+
+  .badge-img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .badge-main-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .badge-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .badge-main-title {
+    font-size: 24px;
+  }
+}

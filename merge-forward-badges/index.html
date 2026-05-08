@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merge Forward — Ambassadors</title>
+  <meta name="description" content="Meet the Merge Forward Ambassadors — community leaders championing open source awareness." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .hero {
+      background: var(--color-navy);
+      padding: 64px var(--space-xl) 56px;
+      text-align: center;
+    }
+
+    .hero-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-amber);
+      margin-bottom: var(--space-md);
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 48px;
+      color: var(--color-white);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: var(--space-md);
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .ambassadors-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: var(--space-xl) var(--space-lg);
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .ambassador-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-md);
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .ambassador-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .card-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: var(--radius-full);
+      background: var(--color-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--color-white);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .card-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--color-navy);
+      letter-spacing: -0.01em;
+    }
+
+    .card-badge-label {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+    }
+
+    .card-pill {
+      background: rgba(239,38,33,0.1);
+      color: var(--color-red);
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 32px; }
+      .ambassadors-grid { padding: var(--space-lg) var(--space-md); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="Merge Forward" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <span style="display:none; font-family:'Gilroy',sans-serif; font-weight:700; font-size:20px; color:#fff; letter-spacing:-0.01em;">MERGE<span style="color:#547DEF;">→</span>FORWARD</span>
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-label">Community recognition</p>
+    <h1>Merge Forward Ambassadors</h1>
+    <p>Meet the community leaders championing open source awareness and amplifying the Merge Forward mission.</p>
+  </section>
+
+  <!-- AMBASSADOR CARDS -->
+  <!-- To add a new ambassador: copy one <a class="ambassador-card"> block and update the fields -->
+  <div class="ambassadors-grid">
+
+    <a href="ambassadors/ambassador.html" class="ambassador-card">
+      <div class="card-avatar">MF</div>
+      <div>
+        <p class="card-name">Ambassador Name</p>
+        <p class="card-badge-label">Merge Forward Ambassador</p>
+      </div>
+      <span class="card-pill">2025</span>
+    </a>
+
+    <!-- Add more ambassador cards here -->
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>
+      &copy; 2025 Merge Forward Community &mdash;
+      <a href="https://community.cncf.io/merge-forward-working-group/" target="_blank" rel="noopener">CNCF Working Group</a>
+    </p>
+  </footer>
+
+</body>
+</html>
