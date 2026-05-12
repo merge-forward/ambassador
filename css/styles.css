@@ -104,7 +104,8 @@ a:hover {
    ============================================ */
 
 .site-header {
-  background: var(--color-violet);
+  background: var(--color-white);
+  box-shadow: 0 1px 8px rgba(44, 44, 94, 0.10);
   padding: var(--space-md) var(--space-xl);
   display: flex;
   align-items: center;
