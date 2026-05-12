@@ -53,8 +53,9 @@
         alt="Merge Forward Ambassador Badge"
       />
 
-      <!-- Add to LinkedIn profile -->
+      <!-- Add to LinkedIn profile (hidden once clicked) -->
       <a
+        id="btn-add-linkedin"
         href="https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Merge+Forward+Ambassador&organizationId=111386930&issueYear=2026&issueMonth=5&certUrl=https://merge-forward.github.io/ambassador/ambassadors/julia-furst-morgado.html&certId=MF-2026-JULIA-FURST"
         target="_blank"
         rel="noopener"
@@ -66,6 +67,16 @@
         </svg>
         Add to LinkedIn profile
       </a>
+
+      <!-- Added confirmation message -->
+      <p id="linkedin-added-msg" style="display:none; font-family:var(--font-body); font-size:13px; color:var(--color-muted); text-align:center;">
+        ✓ Added to LinkedIn profile
+      </p>
+
+      <!-- Download tip -->
+      <p style="font-family:var(--font-body); font-size:13px; color:var(--color-muted); text-align:center; line-height:1.5;">
+        Tip: <a href="../assets/badge-ambassador.png" download="merge-forward-ambassador-badge.png">Download the badge image</a> to upload it to your LinkedIn certification.
+      </p>
 
       <!-- Share on LinkedIn -->
       <a
@@ -133,6 +144,29 @@
       <a href="https://community.cncf.io/merge-forward-working-group/" target="_blank" rel="noopener">CNCF Working Group</a>
     </p>
   </footer>
+
+  <script>
+    (function() {
+      var KEY = 'li-added-julia-furst-morgado';
+      var btn = document.getElementById('btn-add-linkedin');
+      var msg = document.getElementById('linkedin-added-msg');
+
+      // Check if already added
+      if (localStorage.getItem(KEY)) {
+        btn.style.display = 'none';
+        msg.style.display = 'block';
+      }
+
+      // On click, mark as added
+      btn.addEventListener('click', function() {
+        localStorage.setItem(KEY, 'true');
+        setTimeout(function() {
+          btn.style.display = 'none';
+          msg.style.display = 'block';
+        }, 500);
+      });
+    })();
+  </script>
 
 </body>
 </html>
