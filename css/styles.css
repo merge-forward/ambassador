@@ -104,8 +104,10 @@ a:hover {
    ============================================ */
 
 .site-header {
+  position: relative;
+  z-index: 10;
   background: var(--color-white);
-  box-shadow: 2px 6px 12px rgba(96, 80, 238, 0.25);  
+  box-shadow: 2px 6px 12px rgba(36, 30, 93, 0.25);  
   padding: var(--space-md) var(--space-xl);
   display: flex;
   align-items: center;
